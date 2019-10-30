@@ -15,7 +15,7 @@ public class cltohdao {
 	String url = "jdbc:oracle:thin:@localhost:1522:orcl";
 	String dId = "junggo";
 	String dPw = "oracle_11g";
-	// 파일 저장 위치
+	
 	private String ATTACHES_DIR = "../image";
 	public ArrayList<clothdto> list() {
 
