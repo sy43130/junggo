@@ -193,21 +193,9 @@ public class wholeController extends HttpServlet {
 			 command = new clothmodify();
 			 command.execute(request, response);
 			 
-			 System.out.println("여긴오냐");
-			 
-			 String id = request.getParameter("id");
-			 System.out.println(id);
-			 String title = request.getParameter("title");
-			 System.out.println(title);
-			 
-//			 command = new clothlist();
-//		     command.execute(request, response);
-//		     view = "clothlist.jsp";
-			
-			 command = new clothcontent();
-			 System.out.println("컨텐트 밑");
-			 command.execute(request, response);
-			 view="clothcontent.jsp";
+			 command = new clothlist();
+		     command.execute(request, response);
+	         view = "clothlist.jsp";
 		}else {
 			System.out.println("컨트롤러를 타지못했습니다 ");
 		}

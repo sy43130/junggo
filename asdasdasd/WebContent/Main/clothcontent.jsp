@@ -6,6 +6,17 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<style type="text/css">
+
+table, td {
+
+      border: 1px solid black;
+
+      border-collapse: collapse;
+
+}
+
+</style>
 </head>
 <body>
 <div align="center">
@@ -31,13 +42,13 @@
 	            <p align="center">
 	            <font size="2" color="white"></font>내용</td>
 				<td width="383" height="500" bgcolor="#FFFFFF">${contentview.content}</td>
+				
 			</tr>
-			<tr>
-				<td width="200" bgcolor="2E78ED">
-	            <p align="center">
-	            <font size="2" color="white"></font>파일</td>
-				<td width="500" height="500" bgcolor="#FFFFFF"><img src="${contentview.filename}"></td>
-			</tr>
+			 <tr>
+
+                  <td colspan="2"><img src="${contentview.filename}"></td>
+                  <td>${contentview.filename}</td>
+            </tr>
 
 			
 		</table>
