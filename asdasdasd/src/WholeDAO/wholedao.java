@@ -122,8 +122,8 @@ public class wholedao {
 			con = DriverManager.getConnection(url, dId, dPw);// 데이터베이스 연결
 
 			String sql = "SELECT * FROM USERTABLE WHERE ID = ?";// 직접 넣을 꺼는 바인딩 변수 처리
+			
 			psmts = con.prepareStatement(sql);
-
 			psmts.setString(1, Id);
 			rs = psmts.executeQuery();
 

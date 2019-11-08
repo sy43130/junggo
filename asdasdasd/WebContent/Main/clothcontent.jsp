@@ -33,10 +33,10 @@
 				<td width="383" height="500" bgcolor="#FFFFFF">${contentview.content}</td>
 			</tr>
 			<tr>
-				<td width="100" bgcolor="2E78ED">
+				<td width="200" bgcolor="2E78ED">
 	            <p align="center">
 	            <font size="2" color="white"></font>ÆÄÀÏ</td>
-				<td width="300" height="383" bgcolor="#FFFFFF"><img src="${contentview.filename}"></td>
+				<td width="500" height="500" bgcolor="#FFFFFF"><img src="${contentview.filename}"></td>
 			</tr>
 
 			

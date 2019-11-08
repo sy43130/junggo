@@ -24,8 +24,7 @@ public class usermodify implements Command {
 
         int age = Integer.parseInt(request.getParameter("age"));
         
-	
-	    String city = request.getParameter("city");
+        String city = request.getParameter("city");
       
 		wholedao wholeDao = new wholedao();
 	

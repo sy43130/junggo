@@ -5,7 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,8 +28,8 @@ public class clothwrite implements Command {
 	private static final String CHARSET = "EUC-KR";
 	// 파일 저장 위치
 	
-	private String ATTACHES_DIR = "C:\\Users\\PCG96\\Desktop\\workspace_JSP\\asdasdasd\\WebContent\\image";
-	private static final int LIMIT_SIZE_BYTES = 1024 * 20;
+	private String ATTACHES_DIR = "C:\\Users\\PCG96\\git\\junggo\\asdasdasd\\WebContent\\image";
+	private static final int LIMIT_SIZE_BYTES = 1024 * 100;
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
@@ -51,17 +51,20 @@ public class clothwrite implements Command {
 		DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
 		// 메모리 저장 최대 크기를 넘길 경우 파일을 생성할 디렉터리를 지정. 지정하지 않을 경우 시스템의 기본 임시 디렉터리를 사용
 		fileItemFactory.setRepository(attachesDir);
-		// 메모리에 저장할 수 잇는 최대크기. 단위는 바이트 기본값은 10240바이트(10kb)
+		// 메모리에 저장할 수 잇는 최대크기. 단위는 바이트 기본값은 1024바이트(10kb)
 		fileItemFactory.setSizeThreshold(LIMIT_SIZE_BYTES);
 		ServletFileUpload fileUpload = new ServletFileUpload(fileItemFactory);
 		
 		//검색~!
         
+		
+       
+	    
 		try {
 			List<FileItem> items = fileUpload.parseRequest(request);
 			for (FileItem item : items) {
 				if (item.isFormField()) { // 텍스트 
-					System.out.printf("파라미터 명 : %s, 파라미터 값 :  %s \n", item.getFieldName(), item.getString(CHARSET));
+					System.out.printf("파라미터 명 : %s, 파라미터 값 : %s \n", item.getFieldName(), item.getString(CHARSET));
 					if(item.getFieldName().equals("id")) {
 						id = item.getString(CHARSET); // input id
 					}
@@ -79,12 +82,12 @@ public class clothwrite implements Command {
 						String separator = File.separator;
 						int index = item.getName().lastIndexOf(separator);
 						filename = item.getName().substring(index + 1);
-						File uploadFile = new File(ATTACHES_DIR + "\\" + filename);
+						File uploadFile = new File(ATTACHES_DIR +"\\" +filename);
 						
-//						System.out.println("separator = > " + separator);
-//						System.out.println("index = > " + index);
-//						
-//						System.out.println("uploadFile = > " + ATTACHES_DIR + separator +filename);
+					    System.out.println("separator = > " + separator);
+					    System.out.println("index = > " + index);
+					
+						System.out.println("uploadFile = > " + ATTACHES_DIR + separator +filename);
 						item.write(uploadFile);
 					}
 				}

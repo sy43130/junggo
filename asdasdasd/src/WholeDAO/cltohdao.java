@@ -111,8 +111,8 @@ public class cltohdao {
 		
 	} // write
 	
-	public clothdto contentview(String sqnumbers) {
-		
+	public clothdto contentview(int sqnumbers) {
+		                       //String sqnumbers
 
 		Connection con = null;
 		PreparedStatement psmts = null;
@@ -130,7 +130,8 @@ public class cltohdao {
 
 			// 처리
 			psmts = con.prepareStatement(sql);
-			psmts.setInt(1, Integer.parseInt(sqnumbers));
+			//psmts.setInt(1, Integer.parseInt(sqnumbers));
+			psmts.setInt(1, sqnumbers);
 			rs = psmts.executeQuery();
             
 			if(rs.next()) {
@@ -139,16 +140,15 @@ public class cltohdao {
 				String Title = rs.getString("title");
 				String Content = rs.getString("content");
 				String filename = rs.getString("filename");
-				filename = ATTACHES_DIR + "/" + filename;
+				filename = ATTACHES_DIR + "\\" + filename;
+				//int sqnumber = rs.getInt("sqnumber");
 				int sqnumber = rs.getInt("sqnumber");
 				
-				
 				dto = new clothdto(sqnumber,id, Title, Content,filename);
-
+                
 				
 			}
-
-		
+               
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -237,8 +237,8 @@ public void userdelete(String id) {
 		
 	}//delete
 	
-	public void clothmodify(String sqnumber,String id, String title, String content) {
-		System.out.println("여기");
+	public void clothmodify(int sqnumber,String id, String title, String content, String filename) {
+		//String sqnumber,String id, String title, String content, String filename
 		Connection con = null;
 		PreparedStatement psmts = null;
 		
@@ -248,7 +248,7 @@ public void userdelete(String id) {
 
 			con = DriverManager.getConnection(url, dId, dPw);// 데이터베이스 연결
 			
-			String query = "UPDATE cloth SET id=?, Title=?, Content=? WHERE sqnumber=?";
+			String query = "UPDATE cloth SET id=?, Title=?, Content=? , filename=? WHERE sqnumber=?";
 			
 			
 			psmts = con.prepareStatement(query);
@@ -256,12 +256,14 @@ public void userdelete(String id) {
 			psmts.setString(1, id);//바인딩 변수 셋팅
 			psmts.setString(2, title);
 			psmts.setString(3, content);
-		    psmts.setInt(4, Integer.parseInt(sqnumber));
-			
+			psmts.setString(4, filename);
+			filename = ATTACHES_DIR + "\\" + filename;
+		    //psmts.setInt(5, Integer.parseInt(sqnumber));
+			psmts.setInt(5, sqnumber);
 			
 			
 		    psmts.executeUpdate();
-		    System.out.println("여기");
+		
 		
 		}catch(Exception e) {
 			e.printStackTrace();

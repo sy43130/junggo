@@ -87,9 +87,7 @@ public class wholeController extends HttpServlet {
 			command = new Join();
 			command.execute(request, response);
 			view = "createSucessed.jsp";
-			
 		
-			
 		} else if (comm.equals("joincheck.do")) {
 			command = new joincheck();
 			command.execute(request, response);
@@ -104,7 +102,8 @@ public class wholeController extends HttpServlet {
 					e.printStackTrace();
 				}
 				view = "main.jsp";
-			    String id = request.getParameter("id");
+			    
+				String id = request.getParameter("id");
 				session.setAttribute("id", id);
                
 			} else if (((joincheck) command).getX() == 0) {
@@ -168,6 +167,8 @@ public class wholeController extends HttpServlet {
 		} else if (comm.equals("write.do")) {
 			command = new clothwrite();
 			command.execute(request, response);
+			
+			System.out.println("여기까진?");
 		
 			command = null; 
 		    command = new clothlist();
@@ -183,19 +184,29 @@ public class wholeController extends HttpServlet {
 			    
 			command = new clothlist();
 			command.execute(request, response);
-			     view = "clothlist.jsp";
+			view = "clothlist.jsp";
 	   } else if(comm.equals("clothmodifypage.do")) {
 			command = new clothcontent();
 		    command.execute(request, response);
 			view="clothmodify.jsp";
-		} else if(comm.equals("clothmodify.do")) {
+	   } else if(comm.equals("clothmodify.do")) {
 			 command = new clothmodify();
 			 command.execute(request, response);
 			 
-			 System.out.println("여기1");
+			 System.out.println("여긴오냐");
+			 
+			 String id = request.getParameter("id");
+			 System.out.println(id);
+			 String title = request.getParameter("title");
+			 System.out.println(title);
+			 
+//			 command = new clothlist();
+//		     command.execute(request, response);
+//		     view = "clothlist.jsp";
+			
 			 command = new clothcontent();
+			 System.out.println("컨텐트 밑");
 			 command.execute(request, response);
-			 System.out.println("여기2");
 			 view="clothcontent.jsp";
 		}else {
 			System.out.println("컨트롤러를 타지못했습니다 ");

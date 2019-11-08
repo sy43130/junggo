@@ -23,7 +23,7 @@
 </script>
 </head>
 <body>
-   <form action="clothmodify.do" method="post" onSubmit="return check()" name="f">
+   <form action="clothmodify.do" method="post" onSubmit="return check()" name="f" enctype="multipart/form-data">
   <div align="center">
    <table border="0" cellspacing="0" bgcolor="#0C0133" cellpadding="0" width="10">
 	   <table width="500" cellpadding="3" cellspacing="0" border="1">
@@ -60,7 +60,9 @@
 	         <input style="height:400px; width:400px" type="text" name="content" value="${contentview.content}" id="content"></td>
 			</tr>
 			
-		
+			<tr>
+			<td><input type="file" name="photo" value="${contentview.filename}">${contentview.filename}</td>
+		    </tr>
 		</table>
 		<tr>
 				<input type="submit" value="¼öÁ¤"> &nbsp;&nbsp;
