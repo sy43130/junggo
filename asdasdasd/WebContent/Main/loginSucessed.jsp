@@ -13,7 +13,7 @@
    <!--<div>
    		<%// String id = request.getSession().getId();%>
    	</div>  -->
-  <a href="userlist.do">정보보기</a>
-  	 
+   <a href="userlist.do">정보보기</a>
+
 </body>
 </html>

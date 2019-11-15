@@ -8,32 +8,41 @@
 <style type="text/css">
 
 #whole{
-   margin-right:100px;
-   margin-left:100px;
+   margin-right:200px;
+   margin-left:220px;
 
 }
 #a{
-background-color:gray;
+background-color:white;
 margin-right:50px;
 margin-top:50px;
 text-align:right;
 height:100px;
 }
+
 #b{
-  background-color:red;
+  background-color:white;
   text-align:center;
 }
 
 #c{
 width:200px;
 height:400px;
-background-color:yellow;
+background-color:white;
 float:left;
 margin:5px;
-
-   text-align:right;
+text-align:right;
 
 }
+#c a{
+  text-decoration:none;
+  background-color:#333333;
+  color:white;
+  padding:3px 8px;
+  
+
+}
+
 #d{
   margin:5px;
   float:left;
@@ -56,7 +65,7 @@ margin:5px;
    
      <div id="a">
         <div id="b">
-                중고나라
+              
        </div >
      
        
@@ -87,8 +96,12 @@ margin:5px;
      
      </div>
      <div id="d">
-        
-     
+         <div style="width: 100%; text-align: center"  >
+
+         <img src="img/main1.jpg" style="width: 100%; max-width: 900px; vertical-align: middle">
+
+       </div>
+
      </div>
      
      </div>

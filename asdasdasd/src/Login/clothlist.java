@@ -15,13 +15,10 @@ public class clothlist implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
         
-		
-		
 		cltohdao dao = new cltohdao();
 
 		ArrayList<clothdto> dtos = dao.list();
 	   
-		
 		request.setAttribute("clothlist", dtos);
 
 	}

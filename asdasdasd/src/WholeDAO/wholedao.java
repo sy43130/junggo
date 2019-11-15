@@ -83,8 +83,10 @@ public class wholedao {
 				// b , null
 
 				if (dbpw.equals(pw)) {
+					
 					x = 1;//로그인성공시
 				} else {
+					
 					x = 0; // alert 로그인 비번이 틀렸습니다
 				}
 			} else {

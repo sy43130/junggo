@@ -23,7 +23,7 @@
 </script>
 </head>
 <body>
-   <form action="clothmodify.do" method="post" onSubmit="return check()" name="f" enctype="multipart/form-data">
+ <form action="clothmodify.do" method="post" onSubmit="return check()" name="f" enctype="multipart/form-data">
   <div align="center">
    <table border="0" cellspacing="0" bgcolor="#0C0133" cellpadding="0" width="10">
 	   <table width="500" cellpadding="3" cellspacing="0" border="1">
@@ -64,7 +64,8 @@
 			<td><input type="file" name="photo" value="${contentview.filename}">${contentview.filename}</td>
 		    </tr>
 		</table>
-		<tr>
+		    <tr>
+				
 				<input type="submit" value="수정"> &nbsp;&nbsp;
 				<a href="clothlist.do">목록보기</a>
 					

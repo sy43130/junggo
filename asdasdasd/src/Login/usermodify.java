@@ -11,12 +11,12 @@ public class usermodify implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		
 		HttpSession session = request.getSession(false);
 
 	    String id = (String) session.getAttribute("id");
 
-		                                  
-		String pw = request.getParameter("pw");
+	    String pw = request.getParameter("pw");
 		
 		String name = request.getParameter("name");
 		

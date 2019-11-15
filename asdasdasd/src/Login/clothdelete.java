@@ -17,10 +17,6 @@ public class clothdelete implements Command {
 		cltohdao dao = new cltohdao();
 		dao.delete(sqnumber);
 		
-		
-			
-			
-			
-		}
+	    }
 
 }

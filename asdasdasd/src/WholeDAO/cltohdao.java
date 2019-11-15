@@ -25,7 +25,7 @@ public class cltohdao {
 		Connection con = null;
 		PreparedStatement psmts = null;
 		ResultSet rs = null;
-       
+        
 		clothdto dto = null;
 		try {
 

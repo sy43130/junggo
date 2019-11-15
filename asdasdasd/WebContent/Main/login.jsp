@@ -31,7 +31,7 @@
 										<font size="2" color="white">비밀번호</font>
 								</td>
 								<td width="383" bgcolor="#FFFFFF">
-								<input type="password"name="pw" maxlength="15" size="10"></td>
+								<input type="password" name="pw" maxlength="15" size="10"></td>
 							</tr>
 							
 						</table>

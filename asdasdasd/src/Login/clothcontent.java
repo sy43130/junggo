@@ -10,7 +10,7 @@ public class clothcontent implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		System.out.println("¿©±â´Â2");
+		
 		
 		
 		int sqnumber = Integer.parseInt(request.getParameter("sqnumber"));
