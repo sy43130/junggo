@@ -36,7 +36,7 @@
 			</tr>
 			<tr>
 
-                  <td colspan="2"><img width="100%" height="400" src="${contentview.filename}"></td>
+                <td colspan="2"><img width="100%" height="400" src="${contentview.filename}"></td>
                   
             </tr>
 
