@@ -83,18 +83,20 @@ public class clothwrite implements Command {
 				} else { // 파일 인경우
 					System.out.printf("파라미터 명 : %s, 파일 명 : %s,  파일 크기 : %s bytes \n", item.getFieldName(),
 							item.getName(), item.getSize());
-					filename = item.getName();
-					if (item.getSize() > 0) {
+					filename = item.getName();//파일명 얻어오기
+					if (item.getSize() > 0) {//파일의 크기 0 위
 						String separator = File.separator;
 						int index = item.getName().lastIndexOf(separator);
 						filename = item.getName().substring(index + 1);
 						File uploadFile = new File(ATTACHES_DIR +"\\" +filename);
+						//저장할 경로
 						
 					    System.out.println("separator = > " + separator);
 					    System.out.println("index = > " + index);
 					
 						System.out.println("uploadFile = > " + ATTACHES_DIR + separator +filename);
 						item.write(uploadFile);
+						//업로드 한 파일을 file이 나타내는 파일로 저장한다. 
 					}
 				}
 			}
