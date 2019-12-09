@@ -12,7 +12,6 @@ public class clothcontent implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		
-		
 		int sqnumber = Integer.parseInt(request.getParameter("sqnumber"));
 		
 		System.out.println("sqnumber" +sqnumber);

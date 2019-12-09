@@ -71,12 +71,13 @@ text-align:right;
        
        <%
        if(session.getAttribute("id")!=null){
-    	   
+      
        %>
        <a href="userlogout.do">로그아웃</a>
        <a href="userlist.do">회원정보</a>
        <%
        }else{
+        
     	 %>
          <a href="./login.jsp">로그인 </a>&nbsp;
          <a href="./create.jsp">회원가입</a>

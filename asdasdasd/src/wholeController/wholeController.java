@@ -24,6 +24,10 @@ import Login.userlist;
 import Login.userlogout;
 import Login.usermodify;
 
+//뷰에서 오는 모든 요청을 하나의 대표 컨트롤러가 처리하는 방식입니다.
+//유지보수성이 매우 뛰어나고 또 수많은 클라이언트의 응답에 계속적으로 객체를 생성하지 않아 자원 활용에도 아주 좋습니다.
+//WholeFrontController.java는 클라이언트의 요청이 어떤 것인지 판별해 그 요청에 맞는 java Controller로 이동시켜 줍니다.
+
 /**
  * Servlet implementation class wholeController
  */
@@ -107,15 +111,14 @@ public class wholeController extends HttpServlet {
 				session.setAttribute("id", id);
                
 			} else if (((joincheck) command).getX() == 0) {
-				try {
-					out = response.getWriter();
-					out.println("<script>alert('비밀번호 오류!');</script>");
-					out.flush();
-				} catch (IOException e) {
-
-					e.printStackTrace();
-				}
-				view = "login.jsp";
+				
+				  try {
+					  out = response.getWriter();
+				      out.println("<script>alert('비밀번호 오류!');</script>"); out.flush(); 
+				      } catch(IOException e) {
+				  
+				       e.printStackTrace(); }
+				       view = "login.jsp";
 			} else if (((joincheck) command).getX() == -1) {
 				try {
 					out = response.getWriter();
@@ -163,13 +166,25 @@ public class wholeController extends HttpServlet {
 			view = "clothlist.jsp";
 		} else if (comm.equals("clothwrite_view.do")) {
 			
-			view = "clothwirte_view.jsp";
-		} else if (comm.equals("write.do")) {
+	        String id = (String) session.getAttribute("id");
+			if(id!=null) {
+				view = "clothwirte_view.jsp";
+			}else {
+				PrintWriter out;
+				try {
+					out = response.getWriter();
+					out.println("<script>alert('로그인 하세요!');</script>");
+					out.flush();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				view = "login.jsp";
+			}
+		 } else if (comm.equals("write.do")) {
+			
 			command = new clothwrite();
 			command.execute(request, response);
 			
-			System.out.println("여기까진?");
-		
 			command = null; 
 		    command = new clothlist();
 		    command.execute(request, response);

@@ -219,8 +219,7 @@ public void userdelete(String id) {
 			
 			pstms = con.prepareStatement(query);
 		    
-			pstms.setString(1, id);//아이디는 인트형
-			
+			pstms.setString(1, id);
 			pstms.executeUpdate();
 		
 		}catch(Exception e) {

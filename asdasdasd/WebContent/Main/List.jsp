@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-     <div align="center" float="auto">
+     <div align="center">
 		<b>회원정보</b><br>
 			<table border="0" cellspacing="0" bgcolor="#0C0133" cellpadding="0"
 				width="10">
@@ -22,9 +22,7 @@
 									<p align="center">
 									<font size="2" color="white">아이디</font>
 								</td>
-								<td width="383" bgcolor="#FFFFFF">
-								    ${idList.id}
-								</td>
+								<td width="383" bgcolor="#FFFFFF">${idList.id}</td>
 							</tr>
 							
 							<tr>

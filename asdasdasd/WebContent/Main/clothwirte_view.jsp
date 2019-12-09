@@ -6,6 +6,18 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<style type="text/css">
+input{
+    border:none;
+}
+
+textarea{
+  border:none;
+}
+
+
+</style>
+
 </head>
 <body>
 <form action="write.do" method="post" enctype="multipart/form-data" >
@@ -45,14 +57,14 @@
 				<td width="45" height="45" bgcolor="#FFFFFF"><input type="file" name="photo"><br></td>
 			</tr>
 			
-			<tr>
-				<td colspan="2"></td>
-			</tr>
+			
 		
 		</table>
-		        <input type="submit" value="올리기"> &nbsp;&nbsp;
+		       
+		        <input type="submit" value="올리기">
+		        
 		</table>
-		</div>
+    </div>
 		
 	</form>
 </body>

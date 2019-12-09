@@ -22,7 +22,6 @@ public class joincheck implements Command{
 	}
 
 	public int getX() {
-		 
 		return x;
 	}
 

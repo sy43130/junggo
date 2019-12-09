@@ -16,8 +16,8 @@ import WholeDAO.cltohdao;
 
 public class clothmodify implements Command{
 	private static final String CHARSET = "EUC-KR";
-	// 파일 저장 위치
 	
+	//파일 저장 위치
 	private String ATTACHES_DIR = "C:\\Users\\PCG96\\git\\junggo\\asdasdasd\\WebContent\\image";
 	private static final int LIMIT_SIZE_BYTES = 1024 * 20;
 
@@ -34,19 +34,17 @@ public class clothmodify implements Command{
 			
 
 		
-		// 파일 경로
+		
 		File attachesDir = new File(ATTACHES_DIR);
-		// 파일 저장 담당 객체
-		// 업로드 파일의 크기가 지정한 크기를 넘기 전까지는 업로드 한 파일 데이터를 메모리에 저장하고
-		// 지정한 크기를 넘길 경우 임시 디렉터리에 파일로 저장
+		
 		DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
-		// 메모리 저장 최대 크기를 넘길 경우 파일을 생성할 디렉터리를 지정. 지정하지 않을 경우 시스템의 기본 임시 디렉터리를 사용
+		
 		fileItemFactory.setRepository(attachesDir);
-		// 메모리에 저장할 수 잇는 최대크기. 단위는 바이트 기본값은 10240바이트(10kb)
+		
 		fileItemFactory.setSizeThreshold(LIMIT_SIZE_BYTES);
 		ServletFileUpload fileUpload = new ServletFileUpload(fileItemFactory);
 		
-		//검색~!
+	
         
 		try {
 			List<FileItem> items = fileUpload.parseRequest(request);
@@ -75,34 +73,22 @@ public class clothmodify implements Command{
 						int index = item.getName().lastIndexOf(separator);
 						filename = item.getName().substring(index + 1);
 						File uploadFile = new File(ATTACHES_DIR + "\\" + filename);
-						
-//						System.out.println("separator = > " + separator);
-//						System.out.println("index = > " + index);
-//						
-//						System.out.println("uploadFile = > " + ATTACHES_DIR + separator +filename);
 						item.write(uploadFile);
-						//write(uploadFile);
+						
 					}
 				}
 			}
 
-			//out.println("<h1>" + filename + "파일 업로드 완료</h1>");
-
 		} catch (Exception e) {
-			// 파일 업로드 처리 중 오류가 발생하는 경우
+			
 			e.printStackTrace();
-			//out.println("<h1>파일 업로드 중 오류가  발생하였습니다.</h1>");
+			
 		}
-		
-		
 		
 		cltohdao dao = new cltohdao();
 		dao.clothmodify(sqnumber,id,title,content,filename);
 	    
-		
-		
-		
-	}
+}
 
 
 

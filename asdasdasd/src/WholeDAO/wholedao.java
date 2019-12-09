@@ -67,15 +67,15 @@ public class wholedao {
 		int x = -1;
 
 		try {
-			Class.forName(driver);
+			 Class.forName(driver);
 
-			con = DriverManager.getConnection(url, dId, dPw);// 데이터베이스 연결
+			 con = DriverManager.getConnection(url, dId, dPw);// 데이터베이스 연결
 
-			String sql = "SELECT pw FROM USERTABLE WHERE id = ?";
-			psmts = con.prepareStatement(sql);
+			 String sql = "SELECT pw FROM USERTABLE WHERE id = ?";
+			 psmts = con.prepareStatement(sql);
 
-			psmts.setString(1, id);
-			rs = psmts.executeQuery();
+			 psmts.setString(1, id);
+			 rs = psmts.executeQuery();
 
 			if (rs.next()) {
 				String dbpw = rs.getString("pw");

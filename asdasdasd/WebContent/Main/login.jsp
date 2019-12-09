@@ -8,10 +8,10 @@
 </head>
 <body>
 
-	<form action="joincheck.do" method="post">
+<form action="joincheck.do" method="post">
         
-		<div align="center" float="auto">
-		  <b>로그인</b><br>
+	  <div align="center">
+		   <b>로그인</b><br>
 			<table border="0" cellspacing="0" bgcolor="#0C0133" cellpadding="0" width="10">
 				<tr>
 					<td>
@@ -22,8 +22,7 @@
 									<p align="center">
 									<font size="2" color="white">아이디</font>
 								</td>
-								<td width="383" bgcolor="#FFFFFF"><input type="text"
-									name="id" maxlength="15" size="10"></td>
+								<td width="383" bgcolor="#FFFFFF"><input type="text" name="id" maxlength="15" size="10"></td>
 							</tr>
 							<tr>
 								<td width="150" bgcolor="#2E78ED">
@@ -34,16 +33,14 @@
 								<input type="password" name="pw" maxlength="15" size="10"></td>
 							</tr>
 							
-						</table>
+				</table>
 						
-			</table>
+		</table>
+				<input type="submit" value="로그인">
 				
-			
-			     <input type="submit" value="로그인" >
 		</div>
-		                
-	
-	</form>
+		
+</form>
 
 
 
